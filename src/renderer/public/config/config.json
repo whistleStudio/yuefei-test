@@ -1,6 +1,6 @@
 {
   "scene": {
-    "center": { "lat": 31.915, "lng": 118.870, "alt": 25000, "heading": 0, "pitch": -90 },
+    "center": { "lat": 31.915, "lng": 118.87, "alt": 25000, "heading": 0, "pitch": -90 },
     "scene3DOnly": false,
     "shadows": false,
     "removeDblClick": true,
@@ -47,7 +47,7 @@
     "mouseDownView": true,
     "zoom": { "insertIndex": 1 },
     "compass": { "bottom": "toolbar", "left": "5px" },
-    "distanceLegend": { "left": "10px","bottom": "2px" },
+    "distanceLegend": { "left": "10px", "bottom": "2px" },
     "locationBar": {
       "fps": false,
       "crs": "CGCS2000_GK_Zone_3",
@@ -68,11 +68,35 @@
     {
       "pid": 10,
       "name": "本地离线卫星图",
-      "icon": "../img/basemaps/gaode_vec.png", 
-      "type": "xyz",                      
-      "url": "/map/{z}/{x}/{y}.png", 
-      "minimumLevel": 11,                       
-      "maximumLevel": 12                  
+      "icon": "/img/basemaps/gaode_img.png",
+      "type": "xyz",
+      "url": "/map/{z}/{x}/{y}.png",
+      "rectangle": {
+        "xmin": 118.4820556640625,
+        "ymin": 31.618304843852837,
+        "xmax": 119.12200927734375,
+        "ymax": 32.10933267766435
+      },
+      "minimumLevel": 11,
+      "maximumLevel": 16,
+      "show": true,
+      "layers": [
+    {
+      "name": "mark",
+      "type": "xyz",
+      "url": "/mark/{z}/{x}/{y}/tile.png",
+      "rectangle": {
+        "xmin": 118.4820556640625,
+        "ymin": 31.618304843852837,
+        "xmax": 119.12200927734375,
+        "ymax": 32.10933267766435
+      },
+      "minimumLevel": 11,
+      "maximumLevel": 16,
+      "zIndex": 999,
+      "show": true
+    }
+      ]
     },
     {
       "id": 2021,
@@ -83,8 +107,7 @@
       "layers": [
         { "name": "底图", "type": "tdt", "layer": "img_d" },
         { "name": "注记", "type": "tdt", "layer": "img_z" }
-      ],
-      "show": true 
+      ]
     },
     {
       "pid": 10,
@@ -211,6 +234,22 @@
     }
   ],
   "layers": [
+    {
+      "id": 123,
+      "name": "mark",
+      "type": "xyz",
+      "url": "/mark/{z}/{x}/{y}/tile.png",
+      "rectangle": {
+        "xmin": 118.4820556640625,
+        "ymin": 31.618304843852837,
+        "xmax": 119.12200927734375,
+        "ymax": 32.10933267766435
+      },
+      "minimumLevel": 11,
+      "maximumLevel": 16,
+      "zIndex": 999
+    },
+
     { "id": 50, "name": "辅助图层", "type": "group" },
     { "pid": 50, "type": "graticule", "name": "经纬网" },
     {
@@ -240,7 +279,13 @@
     },
 
     { "id": 60, "name": "地形", "type": "group" },
-    { "pid": 60, "type": "terrain", "name": "Cesium地形", "terrain": { "type": "ion" }, "radio": true },
+    {
+      "pid": 60,
+      "type": "terrain",
+      "name": "Cesium地形",
+      "terrain": { "type": "ion" },
+      "radio": true
+    },
     {
       "pid": 60,
       "type": "terrain",
@@ -258,7 +303,13 @@
       },
       "radio": true
     },
-    { "pid": 60, "type": "terrain", "name": "无地形", "terrain": { "type": "none" }, "radio": true },
+    {
+      "pid": 60,
+      "type": "terrain",
+      "name": "无地形",
+      "terrain": { "type": "none" },
+      "radio": true
+    },
 
     { "id": 40, "name": "栅格数据", "type": "group" },
     { "id": 4020, "pid": 40, "name": "OGC WMS服务", "type": "group" },
@@ -283,7 +334,13 @@
       "layers": "mars:hfdl",
       "crs": "EPSG:4326",
       "parameters": { "transparent": "true", "format": "image/png" },
-      "center": { "lat": 31.743214, "lng": 117.277097, "alt": 47197.7, "heading": 0.3, "pitch": -78.8 },
+      "center": {
+        "lat": 31.743214,
+        "lng": 117.277097,
+        "alt": 47197.7,
+        "heading": 0.3,
+        "pitch": -78.8
+      },
       "popup": "all",
       "mapSplit": false,
       "show": false,
@@ -308,7 +365,13 @@
         "outlineOpacity": 1.0,
         "clampToGround": true
       },
-      "center": { "lat": 31.79513, "lng": 117.236172, "alt": 3784.6, "heading": 0.7, "pitch": -42.2 },
+      "center": {
+        "lat": 31.79513,
+        "lng": 117.236172,
+        "alt": 3784.6,
+        "heading": 0.7,
+        "pitch": -42.2
+      },
       "popup": "all",
       "show": false,
       "flyTo": true
@@ -321,7 +384,13 @@
       "layers": "mars:hfgh",
       "crs": "EPSG:4326",
       "parameters": { "transparent": "true", "format": "image/png" },
-      "center": { "lat": 31.743214, "lng": 117.277097, "alt": 47197.7, "heading": 0.3, "pitch": -78.8 },
+      "center": {
+        "lat": 31.743214,
+        "lng": 117.277097,
+        "alt": 47197.7,
+        "heading": 0.3,
+        "pitch": -78.8
+      },
       "popup": "all",
       "show": false,
       "flyTo": true
@@ -347,7 +416,13 @@
       "url": "//server.mars3d.cn/arcgis/rest/services/mars/hefei/MapServer",
       "layers": "24",
       "highlight": { "type": "polyline", "color": "#2deaf7", "width": 4, "clampToGround": true },
-      "center": { "lat": 31.814176, "lng": 117.225362, "alt": 5105.3, "heading": 359.2, "pitch": -83.1 },
+      "center": {
+        "lat": 31.814176,
+        "lng": 117.225362,
+        "alt": 5105.3,
+        "heading": 359.2,
+        "pitch": -83.1
+      },
       "popup": "all",
       "onWidget": "layer-picture-heatmap",
       "mapSplit": false
@@ -369,7 +444,13 @@
         "outlineOpacity": 1.0,
         "clampToGround": true
       },
-      "center": { "lat": 31.816951, "lng": 117.22898, "alt": 2916.7, "heading": 0.3, "pitch": -78.8 },
+      "center": {
+        "lat": 31.816951,
+        "lng": 117.22898,
+        "alt": 2916.7,
+        "heading": 0.3,
+        "pitch": -78.8
+      },
       "popup": "名称：{NAME}<br />层数：{floor}",
       "onWidget": "layer-picture-heatmap"
     },
@@ -390,7 +471,13 @@
         "outlineOpacity": 1.0,
         "clampToGround": true
       },
-      "center": { "lat": 31.816951, "lng": 117.22898, "alt": 2916.7, "heading": 0.3, "pitch": -78.8 },
+      "center": {
+        "lat": 31.816951,
+        "lng": 117.22898,
+        "alt": 2916.7,
+        "heading": 0.3,
+        "pitch": -78.8
+      },
       "popup": [
         { "field": "用地名称", "name": "名称" },
         { "field": "用地编号", "name": "编号" },
@@ -459,7 +546,9 @@
       "type": "geojson",
       "name": "建筑物面",
       "url": "{dataServer}/file/geojson/buildings-demo.json",
-      "symbol": { "styleOptions": { "color": "#0d3685", "outlineColor": "#0d3685", "opacity": 0.8 } },
+      "symbol": {
+        "styleOptions": { "color": "#0d3685", "outlineColor": "#0d3685", "opacity": 0.8 }
+      },
       "buildings": { "cloumn": "floors", "height": "flo_height" },
       "popup": "all",
       "flyTo": true,
@@ -572,7 +661,12 @@
       },
       "popup": [
         { "field": "NAME", "name": "名称" },
-        { "type": "details", "callback": "showPopupDetails", "field": "图片", "className": "mars3d-popup-btn-custom" }
+        {
+          "type": "details",
+          "callback": "showPopupDetails",
+          "field": "图片",
+          "className": "mars3d-popup-btn-custom"
+        }
       ],
       "show": false,
       "flyTo": true
@@ -655,7 +749,13 @@
         "styleOptions": { "color": "#00469c", "outline": false, "opacity": 1 }
       },
       "buildings": { "cloumn": "floor" },
-      "center": { "lat": 31.818396, "lng": 117.229083, "alt": 2554.4, "heading": 359.2, "pitch": -83.1 },
+      "center": {
+        "lat": 31.818396,
+        "lng": 117.229083,
+        "alt": 2554.4,
+        "heading": 359.2,
+        "pitch": -83.1
+      },
       "popup": "名称：{NAME}<br />层数：{floor}"
     },
     {
@@ -689,7 +789,13 @@
           }
         }
       },
-      "center": { "lat": 31.812256, "lng": 117.229873, "alt": 4683.91, "heading": 357.4, "pitch": -65.4 },
+      "center": {
+        "lat": 31.812256,
+        "lng": 117.229873,
+        "alt": 4683.91,
+        "heading": 357.4,
+        "pitch": -65.4
+      },
       "popup": "all"
     },
     { "id": 3010, "pid": 30, "name": "ArcGIS WFS", "type": "group" },
@@ -700,7 +806,13 @@
       "url": "//server.mars3d.cn/arcgis/rest/services/mars/hefei/MapServer/1",
       "where": " 1=1 ",
       "minimumLevel": 15,
-      "center": { "lat": 31.818396, "lng": 117.229083, "alt": 2554.4, "heading": 359.2, "pitch": -83.1 },
+      "center": {
+        "lat": 31.818396,
+        "lng": 117.229083,
+        "alt": 2554.4,
+        "heading": 359.2,
+        "pitch": -83.1
+      },
       "symbol": {
         "type": "billboardP",
         "styleOptions": {
@@ -751,7 +863,13 @@
         }
       },
       "popup": "名称：{NAME}",
-      "center": { "lat": 31.814176, "lng": 117.225362, "alt": 5105.3, "heading": 359.2, "pitch": -83.1 }
+      "center": {
+        "lat": 31.814176,
+        "lng": 117.225362,
+        "alt": 5105.3,
+        "heading": 359.2,
+        "pitch": -83.1
+      }
     },
     {
       "pid": 3010,
@@ -759,10 +877,18 @@
       "name": "建筑物面",
       "url": "//server.mars3d.cn/arcgis/rest/services/mars/hefei/MapServer/37",
       "minimumLevel": 15,
-      "symbol": { "styleOptions": { "color": "#0d3685", "outlineColor": "#0d3685", "opacity": 0.8 } },
+      "symbol": {
+        "styleOptions": { "color": "#0d3685", "outlineColor": "#0d3685", "opacity": 0.8 }
+      },
       "buildings": { "cloumn": "floor" },
       "debuggerTileInfo": false,
-      "center": { "lat": 31.816951, "lng": 117.22898, "alt": 1916.7, "heading": 0.3, "pitch": -78.8 },
+      "center": {
+        "lat": 31.816951,
+        "lng": 117.22898,
+        "alt": 1916.7,
+        "heading": 0.3,
+        "pitch": -78.8
+      },
       "popup": "名称：{NAME}<br />层数：{floor}"
     },
     { "id": 3060, "pid": 30, "name": "CZML数据", "type": "group" },
@@ -828,7 +954,13 @@
         }
       ],
       "popup": "示例信息，这是一个风力发电机",
-      "center": { "lat": 31.821083, "lng": 117.21832, "alt": 832.64, "heading": 2.3, "pitch": -39.2 }
+      "center": {
+        "lat": 31.821083,
+        "lng": 117.21832,
+        "alt": 832.64,
+        "heading": 2.3,
+        "pitch": -39.2
+      }
     },
     {
       "pid": 2010,
@@ -846,7 +978,13 @@
           }
         }
       ],
-      "center": { "lat": 31.815363, "lng": 117.215958, "alt": 107.35, "heading": 90.7, "pitch": -26.1 }
+      "center": {
+        "lat": 31.815363,
+        "lng": 117.215958,
+        "alt": 107.35,
+        "heading": 90.7,
+        "pitch": -26.1
+      }
     },
     { "id": 2040, "pid": 20, "name": "城市白模", "type": "group" },
     {
@@ -892,7 +1030,13 @@
         { "field": "name", "name": "名称" },
         { "field": "floor", "name": "楼层" }
       ],
-      "center": { "lat": 31.257341, "lng": 121.466139, "alt": 2170.8, "heading": 122.2, "pitch": -31.8 }
+      "center": {
+        "lat": 31.257341,
+        "lng": 121.466139,
+        "alt": 2170.8,
+        "heading": 122.2,
+        "pitch": -31.8
+      }
     },
 
     { "id": 2050, "pid": 20, "name": "点云", "type": "group" },
@@ -963,7 +1107,13 @@
       "progressiveResolutionHeightFraction": 0.5,
       "dynamicScreenSpaceError": true,
       "preloadWhenHidden": true,
-      "center": { "lat": 31.849357, "lng": 117.099194, "alt": 306.2, "heading": 327.1, "pitch": -30.9 },
+      "center": {
+        "lat": 31.849357,
+        "lng": 117.099194,
+        "alt": 306.2,
+        "heading": 327.1,
+        "pitch": -30.9
+      },
       "scenetree": "scenetree.json",
       "highlight": { "type": "click", "color": "#00FF00" },
       "popup": "all"
@@ -1030,7 +1180,13 @@
       "position": { "alt": 15.2 },
       "maximumScreenSpaceError": 1,
       "maximumMemoryUsage": 1024,
-      "center": { "lat": 29.792675, "lng": 121.480207, "alt": 190.8, "heading": 196.1, "pitch": -49 }
+      "center": {
+        "lat": 29.792675,
+        "lng": 121.480207,
+        "alt": 190.8,
+        "heading": 196.1,
+        "pitch": -49
+      }
     },
     { "id": 2030, "pid": 20, "name": "倾斜摄影", "type": "group" },
     {
@@ -1044,7 +1200,13 @@
       "maximumMemoryUsage": 2048,
       "dynamicScreenSpaceError": true,
       "cullWithChildrenBounds": false,
-      "center": { "lat": 28.440864, "lng": 119.486477, "alt": 588.23, "heading": 268.6, "pitch": -37.8 },
+      "center": {
+        "lat": 28.440864,
+        "lng": 119.486477,
+        "alt": 588.23,
+        "heading": 268.6,
+        "pitch": -37.8
+      },
       "show": false,
       "flyTo": false
     },
@@ -1117,7 +1279,13 @@
       "cullWithChildrenBounds": false,
       "skipLevelOfDetail": true,
       "preferLeaves": true,
-      "center": { "lat": 33.589536, "lng": 119.032216, "alt": 145.08, "heading": 3.1, "pitch": -22.9 }
+      "center": {
+        "lat": 33.589536,
+        "lng": 119.032216,
+        "alt": 145.08,
+        "heading": 3.1,
+        "pitch": -22.9
+      }
     },
     { "id": 99, "name": "默认图层", "type": "group" }
   ]

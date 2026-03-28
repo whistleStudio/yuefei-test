@@ -5,6 +5,5 @@ out
 .eslintcache
 *.log*
 resources
-src/renderer/public/assets
-src/renderer/public/img
-src/renderer/public/map
+src/renderer/public/*
+!src/renderer/public/config.json

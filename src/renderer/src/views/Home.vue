@@ -19,7 +19,7 @@ import { ref } from 'vue'
 
 const activeMenuIndex = ref(0)
 
-
+console.log(import.meta.env.BASE_URL)
 console.log("resourcepath", (window.api as any).resourcesPath())
 
 const handleChangeMenu = (index: number): void => {
