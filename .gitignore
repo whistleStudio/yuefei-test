@@ -1,0 +1,10 @@
+node_modules
+dist
+out
+.DS_Store
+.eslintcache
+*.log*
+resources
+src/renderer/public/assets
+src/renderer/public/img
+src/renderer/public/map
